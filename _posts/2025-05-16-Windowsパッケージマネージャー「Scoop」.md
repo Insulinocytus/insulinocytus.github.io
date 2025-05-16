@@ -1,7 +1,7 @@
 ---
 title: Windowsパッケージマネージャー「Scoop」
 date: 2025-05-16 20:22:00 +0900
-categories: [ツール,効率化]
+categories: [ツール]
 tags: [効率化,ツール]
 pin: false
 media_subpath: /../assets/media/scoop
