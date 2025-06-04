@@ -20,14 +20,14 @@ mermaid: true
 
 Linuxに近い感覚のShell環境ですので、WindowsのためにわざわざPowerShellを勉強する必要もないし、他のLinux/Macで作成したShellそのまま使える
 
-```bash
+```shell
 scoop install msys2
 ```
 
 環境変数の追加  
 これ追加しないとMsys2内でWindowsのPATH環境変数は認識されない
 
-```plaintext
+```text
 MSYS2_PATH_TYPE    inherit
 ```
 
@@ -35,7 +35,7 @@ MSYS2_PATH_TYPE    inherit
 
 普段Rider使ってますので[JetBrains Nerd Font Mono](https://www.programmingfonts.org/#jetbrainsmono)で
 
-```bash
+```shell
 scoop install nerd-fonts/JetBrainsMono-NF-Mono
 ```
 
@@ -51,7 +51,8 @@ scoop install nerd-fonts/JetBrainsMono-NF-Mono
     "antialiasingMode": "cleartype",
     "closeOnExit": "automatic",
     "colorScheme": "Campbell",
-    "commandline": "**********/msys2_shell.cmd -defterm -no-start -msys2 -shell bash", // あとでzshインストールしたらここをzshに変える
+    // あとでzshインストールしたらここをzshに変える
+    "commandline": "**********/msys2_shell.cmd -defterm -no-start -msys2 -shell bash",
     "cursorShape": "bar",
     "elevate": false,
     "font": 
@@ -75,13 +76,13 @@ scoop install nerd-fonts/JetBrainsMono-NF-Mono
 
 Scoop経由でMsys2インストールすると、デフォルトのHOMEはScoop以下のどっかのフォルダになるのでHOMEも環境変数で指定する
 
-```plaintext
+```text
 HOME    C:\Users\<UserName>
 ```
 
 ## 他のWindows Terminal設定
 
-最小化後に通知領域にアイコン表示してウィンドウは非表示になる
+最小化後に通知領域にアイコン表示してウィンドウは非表示になる  
 ※あとでスタートアップ用のバッチ作成時に役立つ
 
 ```json
@@ -92,7 +93,7 @@ HOME    C:\Users\<UserName>
 
 tmuxをインストール
 
-```bash
+```shell
 pacman -S tmux
 ```
 
@@ -100,7 +101,7 @@ pacman -S tmux
 
 zshをインストール
 
-```bash
+```shell
 pacman -S zsh
 ```
 
@@ -112,14 +113,14 @@ zshのPlugin管理ツール[Antidote](https://antidote.sh/)
 
 インストール
 
-```bash
+```shell
 # first, run this from an interactive zsh terminal session:
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 ```
 
 起動
 
-```bash
+```shell
 # now, simply add these two lines in your ~/.zshrc
 
 # source antidote
@@ -131,13 +132,13 @@ antidote load
 
 [p10k](https://github.com/romkatv/powerlevel10k)をインストール
 
-```bash
+```shell
 echo romkatv/powerlevel10k >> ~/.zsh_plugins.txt
 ```
 
 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)をインストール
 
-```bash
+```shell
 echo zsh-users/zsh-autosuggestions >> ~/.zsh_plugins.txt
 ```
 
