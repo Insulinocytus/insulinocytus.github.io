@@ -142,6 +142,15 @@ echo romkatv/powerlevel10k >> ~/.zsh_plugins.txt
 echo zsh-users/zsh-autosuggestions >> ~/.zsh_plugins.txt
 ```
 
+zshの操作感や表示をbashに近い感じにする
+
+```shell
+setopt NO_NOMATCH
+setopt SH_WORD_SPLIT
+setopt BASH_REMATCH
+setopt NO_GLOB_SUBST
+```
+
 ## PCスタートアップ後に自動的にQuakeモードのWindows Terminalを起動する
 
 - Win + R で`shell:startup`を起動する
@@ -160,4 +169,5 @@ start "Msys2" /MIN "wt.exe" ^
 exit
 ```
 
-`start "Msys2" /MIN`で最小化状態で起動されるが、`"minimizeToNotificationArea": true`になっているので通知領域に最小化される
+`start "Msys2" /MIN`で最小化状態で起動されるが、`"minimizeToNotificationArea": true`になっているので通知領域に最小化される  
+※Windows Terminal 1.22以降ではなぜか最小化がバグるらしいので、一旦1.21に固定している
