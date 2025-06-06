@@ -97,7 +97,11 @@ tmuxをインストール
 pacman -S tmux
 ```
 
-## zsh
+## Oh My Posh (Optional)
+
+zshよりbashの方がいいなら、[Oh My Posh](https://ohmyposh.dev/)で外見をファンシーにする  
+
+## zsh (Optional)
 
 zshをインストール
 
