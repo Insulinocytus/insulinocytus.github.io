@@ -120,7 +120,7 @@ git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antid
 
 起動
 
-```shell
+```.zshrc
 # now, simply add these two lines in your ~/.zshrc
 
 # source antidote
@@ -144,11 +144,35 @@ echo zsh-users/zsh-autosuggestions >> ~/.zsh_plugins.txt
 
 zshの操作感や表示をbashに近い感じにする
 
-```shell
+```.zshrc
 setopt NO_NOMATCH
 setopt SH_WORD_SPLIT
 setopt BASH_REMATCH
 setopt NO_GLOB_SUBST
+```
+
+Bindkey
+
+```.zshrc
+bindkey -e
+bindkey '\e[H'   beginning-of-line    # Home
+bindkey '\e[F'   end-of-line          # End
+bindkey '\e[1~'  beginning-of-line    # Home (Optional)
+bindkey '\e[4~'  end-of-line          # End (Optional)
+bindkey '\e[3~'  delete-char          # Delete
+bindkey '\e[5~'  up-line-or-history   # PageUp
+bindkey '\e[6~'  down-line-or-history # PageDown
+bindkey ' '      magic-space          # Space補完（Optional）
+
+# 方向キー
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
+bindkey '^[[C' forward-char
+bindkey '^[[D' backward-char
+
+# Ctrl + 方向キー
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
 ```
 
 ## PCスタートアップ後に自動的にQuakeモードのWindows Terminalを起動する
