@@ -51,8 +51,7 @@ scoop install nerd-fonts/JetBrainsMono-NF-Mono
     "antialiasingMode": "cleartype",
     "closeOnExit": "automatic",
     "colorScheme": "Campbell",
-    // あとでzshインストールしたらここをzshに変える
-    "commandline": "**********/msys2_shell.cmd -defterm -no-start -msys2 -shell bash",
+    "commandline": "**********/msys2_shell.cmd -defterm -here -no-start -msys2 -shell bash",
     "cursorShape": "bar",
     "elevate": false,
     "font": 
@@ -99,87 +98,21 @@ pacman -S tmux
 
 ## Oh My Posh (Optional)
 
-zshよりbashの方がいいなら、[Oh My Posh](https://ohmyposh.dev/)で外見をファンシーにする  
-
-## zsh (Optional)
-
-zshをインストール
+[Oh My Posh](https://ohmyposh.dev/)でBashの外見をファンシーにする
 
 ```shell
-pacman -S zsh
+scoop install oh-my-posh
 ```
 
-zshのPlugin管理ツール[Antidote](https://antidote.sh/)  
-※Oh my zshは遅いらしいので使わない  
-※AntidoteだとPluginのインストールも簡単
+Bash起動時にOh My Posh初期化する
 
-以下Antidote公式からコピペ
-
-インストール
-
-```shell
-# first, run this from an interactive zsh terminal session:
-git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+```.bashrc
+eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/powerlevel10k_classic.omp.json)"
 ```
 
-起動
+※個人的にはpowerlevel10k_classicが好きですので上記の例ではpowerlevel10k_classicを使います
 
-```.zshrc
-# now, simply add these two lines in your ~/.zshrc
-
-# source antidote
-source ~/.antidote/antidote.zsh
-
-# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
-antidote load
-```
-
-[p10k](https://github.com/romkatv/powerlevel10k)をインストール
-
-```shell
-echo romkatv/powerlevel10k >> ~/.zsh_plugins.txt
-```
-
-[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)をインストール
-
-```shell
-echo zsh-users/zsh-autosuggestions >> ~/.zsh_plugins.txt
-```
-
-zshの操作感や表示をbashに近い感じにする
-
-```.zshrc
-setopt NO_NOMATCH
-setopt SH_WORD_SPLIT
-setopt BASH_REMATCH
-setopt NO_GLOB_SUBST
-```
-
-Bindkey
-
-```.zshrc
-bindkey -e
-bindkey '\e[H'   beginning-of-line    # Home
-bindkey '\e[F'   end-of-line          # End
-bindkey '\e[1~'  beginning-of-line    # Home (Optional)
-bindkey '\e[4~'  end-of-line          # End (Optional)
-bindkey '\e[3~'  delete-char          # Delete
-bindkey '\e[5~'  up-line-or-history   # PageUp
-bindkey '\e[6~'  down-line-or-history # PageDown
-bindkey ' '      magic-space          # Space補完（Optional）
-
-# 方向キー
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
-bindkey '^[[C' forward-char
-bindkey '^[[D' backward-char
-
-# Ctrl + 方向キー
-bindkey '^[[1;5C' forward-word
-bindkey '^[[1;5D' backward-word
-```
-
-## PCスタートアップ後に自動的にQuakeモードのWindows Terminalを起動する
+## PCスタートアップ後に自動的にQuakeモードのWindows Terminalを起動する (Optional)
 
 - Win + R で`shell:startup`を起動する
 - `Terminal.bat`という名前ファイルを作成
@@ -198,4 +131,4 @@ exit
 ```
 
 `start "Msys2" /MIN`で最小化状態で起動されるが、`"minimizeToNotificationArea": true`になっているので通知領域に最小化される  
-※Windows Terminal 1.22以降ではなぜか最小化がバグるらしいので、一旦1.21に固定している
+※Windows Terminal 1.22ではなぜか最小化がバグるらしいので、一旦1.21に固定している
