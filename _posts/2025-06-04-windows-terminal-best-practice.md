@@ -2,7 +2,7 @@
 title: Windows Terminalのセットアップガイド
 date: 2025-06-04 20:26:00 +0900
 categories: [ツール]
-tags: [効率化,ツール,zsh]
+tags: [効率化]
 pin: false
 media_subpath: /../assets/media/windows-terminal-best-practice
 mermaid: true
