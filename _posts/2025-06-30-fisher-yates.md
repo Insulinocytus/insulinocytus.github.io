@@ -7,67 +7,62 @@ pin: false
 mermaid: true
 ---
 
-例えば、カードゲームのデッキを実装する。
-デッキからカードをランダムに抽出するためには、
-事前にシャッフルする必要がある。
+例えば、カードゲームのデッキを実装する場合を考えてみよう。  
+デッキからカードをランダムに抽出するためには、  
+事前にシャッフルする必要がある。  
 
 ## 私ならこう書く
 
 ```csharp
-static IList<T> MyShuffle<T>(Random rng, IList<T> dataList)
+static T[] MyShuffle<T>(Random rng, IEnumerable<T> dataList)
 {
-    return dataList.OrderBy(_ => rng.Next()).ToList();
+    return dataList.OrderBy(_ => rng.Next()).ToArray();
 }
 ```
 
-正直以上のコードで全然足りてる。1行で完結、わかりやすい、カードゲームのデッキぐらいなら余裕だ。
-唯一の欠陥は、空間複雑度が`O(n)`になっていること。`rng.Next()`の結果を保存する必要があるから。
+正直、以上のコードで十分である。1行で完結し、わかりやすく、カードゲームのデッキ程度なら問題ない。  
+唯一の欠陥は、空間計算量が`O(n)`になっていること。`rng.Next()`の結果を保存する必要があるから。  
 
 ## Fisher-Yates
 
 ```csharp
-static IList<T> MyShuffle<T>(Random rng, IList<T> dataList)
+static T[] FisherYates<T>(Random rng, IEnumerable<T> dataList)
 {
-    static IList<T> FisherYates<T>(Random rng, IList<T> dataList)
+    var result = dataList.ToArray();
+    for (var i = result.Length - 1; i > 0; i--)
     {
-        for (var i = dataList.Count - 1; i > 0; i--)
-        {
-            var j = rng.Next(i);
-            if (i != j)
-            {
-                (dataList[i], dataList[j]) = (dataList[j], dataList[i]);
-            }
-        }
-        return dataList;
+        var j = rng.Next(i + 1);
+        (result[i], result[j]) = (result[j], result[i]);
     }
+    return result;
 }
 ```
 
-Listの最後尾から、Indexが指している要素をより小さいIndexの要素と位置交換する、或いは交換しない。
-（リアルのシャッフルでも、シャッフル後にカードの位置が変わらなかった可能性があるから）
-
-空間複雑度は`O(1)`、優雅。
+配列の最後尾から、現在のインデックスが指している要素をより小さいインデックスの要素と位置交換する、または交換しない。  
+（実際のシャッフルでも、シャッフル後にカードの位置が変わらない可能性があるため）  
+  
+空間計算量は`O(1)`、優雅。  
 
 ## 確率分布テスト
 
 ```csharp
 var rng = new Random();
-var testData = new List<int> { 1, 2, 3, 4, 5 };
 
+var testData = new[] { 1, 2, 3, 4, 5 };
 List<int[]> myShuffleResult = new();
 
-for (var i = 0; i < 100000; i++)
+for (var i = 0; i < 1000000; i++)
 {
-    var shuffled = MyShuffle(rng, testData);
-    myShuffleResult.Add(shuffled.ToArray());
+    var result = MyShuffle(rng, testData);
+    myShuffleResult.Add(result);
 }
 
 List<int[]> fisherYatesResult = new();
 
-for (var i = 0; i < 100000; i++)
+for (var i = 0; i < 1000000; i++)
 {
-    var shuffled = FisherYates(rng, testData);
-    fisherYatesResult.Add(shuffled.ToArray());
+    var result = FisherYates(rng, testData);
+    fisherYatesResult.Add(result);
 }
 
 Console.WriteLine("My Shuffle Result");
@@ -92,22 +87,20 @@ static void PrintPercentage(List<int[]> result)
     }
 }
 
-static IList<T> MyShuffle<T>(Random rng, IList<T> dataList)
+static T[] MyShuffle<T>(Random rng, IEnumerable<T> dataList)
 {
-    return dataList.OrderBy(_ => rng.Next()).ToList();
+    return dataList.OrderBy(_ => rng.Next()).ToArray();
 }
 
-static IList<T> FisherYates<T>(Random rng, IList<T> dataList)
+static T[] FisherYates<T>(Random rng, IEnumerable<T> dataList)
 {
-    for (var i = dataList.Count - 1; i > 0; i--)
+    var result = dataList.ToArray();
+    for (var i = result.Length - 1; i > 0; i--)
     {
-        var j = rng.Next(i);
-        if (i != j)
-        {
-            (dataList[i], dataList[j]) = (dataList[j], dataList[i]);
-        }
+        var j = rng.Next(i + 1);
+        (result[i], result[j]) = (result[j], result[i]);
     }
-    return dataList;
+    return result;
 }
 ```
 
@@ -116,65 +109,65 @@ static IList<T> FisherYates<T>(Random rng, IList<T> dataList)
 ```txt
 My Shuffle Result
 Index 0 Percentage:
-1=0.20083
-2=0.20148
-3=0.19647
-4=0.19926
-5=0.20196
+1=0.199332
+2=0.199736
+3=0.200812
+4=0.199802
+5=0.200318
 Index 1 Percentage:
-1=0.20009
-2=0.19939
-3=0.20069
-4=0.19993
-5=0.1999
+1=0.200738
+2=0.200232
+3=0.199358
+4=0.199915
+5=0.199757
 Index 2 Percentage:
-1=0.19929
-2=0.2005
-3=0.20076
-4=0.19986
-5=0.19959
+1=0.200108
+2=0.199867
+3=0.200504
+4=0.199291
+5=0.20023
 Index 3 Percentage:
-1=0.19929
-2=0.19898
-3=0.20094
-4=0.2011
-5=0.19969
+1=0.199323
+2=0.199954
+3=0.199346
+4=0.200855
+5=0.200522
 Index 4 Percentage:
-1=0.2005
-2=0.19965
-3=0.20114
-4=0.19985
-5=0.19886
+1=0.200499
+2=0.200211
+3=0.19998
+4=0.200137
+5=0.199173
 
 Fisher-Yates Result
 Index 0 Percentage:
-1=0.19986
-2=0.20103
-3=0.20058
-4=0.20031
-5=0.19822
+1=0.200182
+2=0.200447
+3=0.200087
+4=0.199704
+5=0.19958
 Index 1 Percentage:
-1=0.19932
-2=0.19905
-3=0.20005
-4=0.19995
-5=0.20163
+1=0.199758
+2=0.199465
+3=0.200224
+4=0.200461
+5=0.200092
 Index 2 Percentage:
-1=0.19915
-2=0.20071
-3=0.20053
-4=0.19992
-5=0.19969
+1=0.199969
+2=0.199617
+3=0.200217
+4=0.200174
+5=0.200023
 Index 3 Percentage:
-1=0.20216
-2=0.19867
-3=0.19963
-4=0.19978
-5=0.19976
+1=0.199866
+2=0.200018
+3=0.199653
+4=0.199981
+5=0.200482
 Index 4 Percentage:
-1=0.19951
-2=0.20054
-3=0.19921
-4=0.20004
-5=0.2007
+1=0.200225
+2=0.200453
+3=0.199819
+4=0.19968
+5=0.199823
 ```
