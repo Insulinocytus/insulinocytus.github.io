@@ -1,5 +1,5 @@
 ---
-title: 無料公開のDNSのチートシート
+title: 無料公開のDNS
 date: 2025-06-18 18:11:00 +0900
 categories: [チートシート]
 tags: [dns]
