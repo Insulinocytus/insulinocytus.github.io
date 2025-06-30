@@ -104,7 +104,7 @@ static T[] FisherYates<T>(Random rng, IEnumerable<T> dataList)
 }
 ```
 
-```stdout
+```console
 My Shuffle Result
 Index 0 Percentage:
 1=0.199332
