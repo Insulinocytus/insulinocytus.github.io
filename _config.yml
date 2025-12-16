@@ -216,6 +216,8 @@ exclude:
   - purgecss.js
   - "*.config.js"
   - "package*.json"
+  - write-a-new-post.md
+  - AGENTS.md
 
 jekyll-archives:
   enabled: [categories, tags]
