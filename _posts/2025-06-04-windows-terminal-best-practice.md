@@ -24,7 +24,7 @@ Linuxに近い感覚のShell環境ですので、Windowsのためにわざわざ
 scoop install msys2
 ```
 
-環境変数の追加  
+環境変数の追加
 これ追加しないとMsys2内でWindowsのPATH環境変数は認識されない
 
 ```text
@@ -81,7 +81,7 @@ HOME    C:\Users\<UserName>
 
 ## 他のWindows Terminal設定
 
-最小化後に通知領域にアイコン表示してウィンドウは非表示になる  
+最小化後に通知領域にアイコン表示してウィンドウは非表示になる
 ※あとでスタートアップ用のバッチ作成時に役立つ
 
 ```json
@@ -130,5 +130,5 @@ start "Msys2" /MIN "wt.exe" ^
 exit
 ```
 
-`start "Msys2" /MIN`で最小化状態で起動されるが、`"minimizeToNotificationArea": true`になっているので通知領域に最小化される  
+`start "Msys2" /MIN`で最小化状態で起動されるが、`"minimizeToNotificationArea": true`になっているので通知領域に最小化される
 ※Windows Terminal 1.22ではなぜか最小化がバグるらしいので、一旦1.21に固定している
