@@ -74,27 +74,41 @@ Do not generate the English or Japanese versions early just to be complete. Avoi
 
 Treat the Chinese version as the review source. The English and Japanese versions should be translations of the finalized Chinese version unless the user asks for something different.
 
-## Translation Notice
+## AI Disclosure
 
-The English and Japanese versions must include a tip block near the beginning of the post stating that the content was translated by AI.
+All versions must include a tip block near the beginning of the post disclosing AI participation.
+
+That disclosure should explain that the author provided the core ideas or source material, and AI assisted with organizing, polishing, and improving readability.
 
 Use Chirpy prompt syntax for that notice.
+
+Example Chinese notice:
+
+```md
+> 本文由作者提供核心内容，并与 AI 协作完成。AI 主要负责整理结构、润色表达和提升可读性。
+{: .prompt-tip }
+```
 
 Example English notice:
 
 ```md
-> This article was translated by AI from the Chinese version. Minor wording differences may exist.
+> This article was created collaboratively by the author and AI. The author provided the core content, and AI helped organize, polish, and improve readability. This English version was also translated by AI from the Chinese version, so minor wording differences may exist.
 {: .prompt-tip }
 ```
 
 Example Japanese notice:
 
 ```md
-> この記事は中国語版をもとに AI で翻訳したものです。表現に若干の差異がある場合があります。
+> この記事は作者と AI の協働で作成されたものです。作者が中核となる内容を提供し、AI は構成整理、表現の推敲、読みやすさの向上を担当しました。また、この日本語版は中国語版をもとに AI で翻訳しているため、表現に若干の差異がある場合があります。
 {: .prompt-tip }
 ```
 
-The Chinese version does not need this translation notice unless the user asks for it.
+The Chinese version only needs the AI-participation disclosure.
+
+The English and Japanese versions must include both:
+
+- AI participation disclosure
+- AI translation disclosure
 
 ## File Naming
 
