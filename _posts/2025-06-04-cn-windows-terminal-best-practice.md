@@ -8,7 +8,7 @@ media_subpath: /../assets/media/windows-terminal-best-practice
 mermaid: true
 ---
 
-> 本文由作者提供核心内容，并与 AI 协作完成。AI 主要负责整理结构、润色表达和提升可读性。
+> 本文由作者提供核心内容与原始表达，并与 AI 协作完成。AI 主要负责将偏口语化、碎片化的内容整理为更清晰的书面表达，并辅助润色结构与可读性。
 {: .prompt-tip }
 
 版本：中文（当前） | [English](/posts/en-windows-terminal-best-practice/) | [日本語](/posts/jp-windows-terminal-best-practice/)

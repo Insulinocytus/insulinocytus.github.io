@@ -4,10 +4,11 @@ date: 2025-06-18 18:11:00 +0900
 categories: ["Cheat Sheet"]
 tags: [dns, english]
 pin: false
+media_subpath: /../assets/media/free-dns-cheatsheet
 mermaid: true
 ---
 
-> This article was created collaboratively by the author and AI. The author provided the core content, and AI helped organize, polish, and improve readability. This English version was also translated by AI from the Chinese version, so minor wording differences may exist.
+> This article was created collaboratively by the author and AI. The author provided the core content and original rough expression, often in a spoken or fragmented form, and AI helped organize it into clearer written prose, polish the wording, and improve readability. This English version was also translated by AI from the Chinese version, so minor wording differences may exist.
 {: .prompt-tip }
 
 Versions: [中文](/posts/cn-free-dns-cheatsheet/) | English (Current) | [日本語](/posts/jp-free-dns-cheatsheet/)
