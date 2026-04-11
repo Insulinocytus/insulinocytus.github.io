@@ -2,7 +2,7 @@
 title: Windows Terminal Setup Guide
 date: 2025-06-04 20:26:00 +0900
 categories: [Tools]
-tags: [效率, windows-terminal]
+tags: [efficiency, windows-terminal, english]
 pin: false
 media_subpath: /../assets/media/windows-terminal-best-practice
 mermaid: true

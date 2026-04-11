@@ -1,8 +1,8 @@
 ---
 title: 本地部署 Gemma 4 小模型：显存友好、日语优秀、翻译实用
 date: 2026-04-11 15:00:00 +0900
-categories: [工具]
-tags: [gemma, ollama, 翻译, 本地部署]
+categories: [Tools]
+tags: [gemma, ollama, translation, local-deployment, chinese]
 media_subpath: /../assets/media/gemma4-local-experience
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: 免费公开 DNS 速查表
 date: 2025-06-18 18:11:00 +0900
-categories: [工具]
-tags: [dns]
+categories: ["Cheat Sheet"]
+tags: [dns, chinese]
 pin: false
 mermaid: true
 ---

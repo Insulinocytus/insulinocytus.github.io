@@ -126,6 +126,25 @@ Add a language tag to every post version:
 
 Keep this language tag in addition to the post's topic tags.
 
+### Categories And Tags
+
+All post `categories` and `tags` must be written in English.
+
+For different language versions of the same article:
+
+- `categories` must stay identical across the Chinese, English, and Japanese versions
+- topic `tags` must stay identical across the Chinese, English, and Japanese versions
+- the only allowed tag difference between language versions is the required language tag (`chinese`, `english`, or `japanese`)
+
+Tag formatting rules:
+
+- all tags must be lowercase
+- if a tag contains multiple words, join them with `-` instead of spaces
+
+Category formatting rules:
+
+- all categories must be written in English
+
 ### AI Disclosure
 
 All versions must include a tip block near the beginning of the post disclosing AI participation.

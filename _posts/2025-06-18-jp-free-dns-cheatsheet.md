@@ -1,7 +1,7 @@
 ---
 title: 無料公開 DNS 早見表
 date: 2025-06-18 18:11:00 +0900
-categories: [ツール]
+categories: ["Cheat Sheet"]
 tags: [dns, japanese]
 pin: false
 media_subpath: /../assets/media/free-dns-cheatsheet

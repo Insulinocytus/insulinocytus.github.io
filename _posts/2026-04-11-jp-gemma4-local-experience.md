@@ -1,8 +1,8 @@
 ---
 title: Gemma 4 小モデルをローカルで動かす：低メモリ・優れた日本語・実用的な翻訳体験
 date: 2026-04-11 15:00:00 +0900
-categories: [ツール]
-tags: [gemma, ollama, 翻訳, ローカルLLM]
+categories: [Tools]
+tags: [gemma, ollama, translation, local-deployment, japanese]
 media_subpath: /../assets/media/gemma4-local-experience
 ---
 

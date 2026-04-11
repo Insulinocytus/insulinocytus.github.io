@@ -1,8 +1,8 @@
 ---
 title: Free Public DNS Cheatsheet
 date: 2025-06-18 18:11:00 +0900
-categories: [Tools]
-tags: [dns]
+categories: ["Cheat Sheet"]
+tags: [dns, english]
 pin: false
 mermaid: true
 ---

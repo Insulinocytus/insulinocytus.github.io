@@ -1,8 +1,8 @@
 ---
 title: Windows Terminal 配置指南
 date: 2025-06-04 20:26:00 +0900
-categories: [工具]
-tags: [效率, windows-terminal]
+categories: [Tools]
+tags: [efficiency, windows-terminal, chinese]
 pin: false
 media_subpath: /../assets/media/windows-terminal-best-practice
 mermaid: true

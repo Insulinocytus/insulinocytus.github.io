@@ -2,7 +2,7 @@
 title: Running Gemma 4 Locally — Low VRAM, Great Japanese, Practical for Translation
 date: 2026-04-11 15:00:00 +0900
 categories: [Tools]
-tags: [gemma, ollama, translation, local-deployment]
+tags: [gemma, ollama, translation, local-deployment, english]
 media_subpath: /../assets/media/gemma4-local-experience
 ---
 

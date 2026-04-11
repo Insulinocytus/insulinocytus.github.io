@@ -1,8 +1,8 @@
 ---
 title: Windows Terminal 設定ガイド
 date: 2025-06-04 20:26:00 +0900
-categories: [ツール]
-tags: [效率, windows-terminal, japanese]
+categories: [Tools]
+tags: [efficiency, windows-terminal, japanese]
 pin: false
 media_subpath: /../assets/media/windows-terminal-best-practice
 mermaid: true
