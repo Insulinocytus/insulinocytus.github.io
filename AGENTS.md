@@ -14,7 +14,6 @@ Keep these rules at the center of all post-writing work:
 - write the Chinese version first and stop there until the user considers it complete
 - only after the Chinese version is confirmed should the English and Japanese versions be created
 - use the `chirpy-post-writer` skill for any task that creates, edits, restructures, or translates blog posts
-- when the user asks to verify article correctness, verify factual claims instead of relying on memory alone
 - if any instruction in this file conflicts with the user's current instructions, follow the user's current instructions
 
 ## Workflow
@@ -26,6 +25,8 @@ Your job is to work with the user step by step, not to disappear for a long time
 Assume the user is often better at speaking than formal writing. The user may provide conversational phrasing, scattered notes, partial paragraphs, or loosely connected points. Your job is to preserve the user's meaning while reorganizing, refining, and converting that material into a coherent written article.
 
 The default collaboration pattern is conversation first, article second. The user may spend time chatting through ideas, examples, reactions, and fragments before asking for an article. Treat that exploratory conversation as the raw source material for the eventual post.
+
+Do not start drafting the post just because the user has mentioned a topic. Continue discussing, organizing, and probing until the user clearly indicates that the material is ready to turn into an article. When in doubt, keep helping the user think through the content instead of prematurely producing a draft.
 
 Follow this workflow when the user wants a new post or a major rewrite:
 
@@ -43,6 +44,7 @@ Follow this workflow when the user wants a new post or a major rewrite:
 - clarify the user's intent through the writing itself, not by asking too many abstract questions up front
 - help the user shape rough notes, spoken-style phrasing, and fragmented material into a coherent post
 - propose structure, wording, and framing when the user gives incomplete material
+- default to continued discussion when the user's thinking is still forming; only move into drafting once the user indicates they want the article written
 - do not invent the user's experiences, opinions, conclusions, examples, or factual claims; if the core material is missing, ask for more source material or leave the point out
 - write a bit, let the user react, then continue refining
 - preserve momentum and avoid wasting time on sections the user may later reject
@@ -85,7 +87,7 @@ Avoid these patterns unless the user explicitly wants them:
 
 The English and Japanese versions should preserve the same concise, direct, conclusion-first style during translation.
 
-## Tools And Verification
+## Tools And References
 
 Treat `AGENTS.md` as the repository-specific layer and `chirpy-post-writer` as the Chirpy writing/manual layer.
 
@@ -95,16 +97,6 @@ If the skill is missing information, unclear, or appears to conflict with Chirpy
 - `https://raw.githubusercontent.com/cotes2020/jekyll-theme-chirpy/refs/heads/master/_posts/2019-08-08-text-and-typography.md`
 
 Treat those two official documents as the source of truth for Chirpy syntax and post-format behavior.
-
-The `agent-browser` skill is also available and should be used when the user explicitly asks to verify the correctness of article content.
-
-Use `agent-browser` especially when:
-
-- checking whether factual claims in a draft are correct after the user asks for verification
-- verifying links, product names, release notes, or documentation details when the user asks to confirm them
-- confirming the current wording or behavior of external services, tools, or websites when verification is requested
-
-When the user requests article-correctness verification, do not rely only on unverified memory for claims that can be checked online. Prefer `agent-browser` and fetch-based source checking for that verification work.
 
 ## Post Format
 
@@ -273,6 +265,14 @@ Examples:
 - `2026-04-11-en-my-post-title.md`
 - `2026-04-11-jp-my-post-title.md`
 
+For different language versions of the same article, keep the same shared slug and change only the language code. The slug used in filenames, `media_subpath`, and cross-language links should refer to the same article set.
+
+Example:
+
+- `2026-04-11-cn-gemma4-local-experience.md`
+- `2026-04-11-en-gemma4-local-experience.md`
+- `2026-04-11-jp-gemma4-local-experience.md`
+
 ### Media Layout
 
 Store all media for a post under:
@@ -303,3 +303,15 @@ Understand these paths before editing:
 - `_config.yml`: site-wide Chirpy and Jekyll configuration
 
 If the repository structure changes in the future, adapt to the current layout rather than assuming the old one still applies.
+
+## Completion Checklist
+
+Before considering a post ready, check the following:
+
+- the article matches the user's actual ideas, judgments, and source material rather than AI-invented content
+- the Chinese version is complete and approved before starting English or Japanese translation, unless the user explicitly asks otherwise
+- front matter is present and uses the correct filename, categories, tags, and `media_subpath`
+- `categories` and topic `tags` are in English, and the language tag matches the current version
+- the AI disclosure tip block appears near the beginning of the post
+- Chinese, English, and Japanese versions of the same article use the same shared slug
+- after all three language versions exist, the required cross-language links are present in the correct files and positioned immediately after the disclosure tip block
