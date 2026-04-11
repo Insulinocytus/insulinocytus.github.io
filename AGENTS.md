@@ -145,6 +145,37 @@ Category formatting rules:
 
 - all categories must be written in English
 
+Example:
+
+```yaml
+---
+categories: [Tools]
+tags: [gemma, ollama, translation, local-deployment, chinese]
+---
+```
+
+For the same article set, the topic portion must stay the same and only the language tag changes:
+
+```yaml
+# Chinese
+tags: [gemma, ollama, translation, local-deployment, chinese]
+
+# English
+tags: [gemma, ollama, translation, local-deployment, english]
+
+# Japanese
+tags: [gemma, ollama, translation, local-deployment, japanese]
+```
+
+Another valid example:
+
+```yaml
+---
+categories: [Tools]
+tags: [efficiency, windows-terminal, english]
+---
+```
+
 ### AI Disclosure
 
 All versions must include a tip block near the beginning of the post disclosing AI participation.
@@ -198,6 +229,29 @@ Placement rule:
 Verification rule:
 
 - do not consider the three-language article set complete until the above links are present in the correct files and in the required position
+
+Example using the `gemma4-local-experience` article set:
+
+```md
+> 本文由作者提供核心内容与原始表达，并与 AI 协作完成。AI 主要负责将偏口语化、碎片化的内容整理为更清晰的书面表达，并辅助润色结构与可读性。
+{: .prompt-tip }
+
+版本：中文（当前） | [English](/posts/en-gemma4-local-experience/) | [日本語](/posts/jp-gemma4-local-experience/)
+```
+
+```md
+> This article was created collaboratively by the author and AI. The author provided the core content and original rough expression, often in a spoken or fragmented form, and AI helped organize it into clearer written prose, polish the wording, and improve readability. This English version was also translated by AI from the Chinese version, so minor wording differences may exist.
+{: .prompt-tip }
+
+Versions: [中文](/posts/cn-gemma4-local-experience/) | English (Current) | [日本語](/posts/jp-gemma4-local-experience/)
+```
+
+```md
+> この記事は作者と AI の協働で作成されたものです。作者が中核となる内容と元の表現を提供し、AI は口語的で断片的な内容を、より明確な文章表現へ整理し、構成の調整、表現の推敲、読みやすさの向上を担当しました。また、この日本語版は中国語版をもとに AI で翻訳しているため、表現に若干の差異がある場合があります。
+{: .prompt-tip }
+
+言語: [中文](/posts/cn-gemma4-local-experience/) | [English](/posts/en-gemma4-local-experience/) | 日本語（現在）
+```
 
 ### File Naming
 
