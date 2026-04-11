@@ -9,6 +9,8 @@ media_subpath: /../assets/media/gemma4-local-experience
 > この記事は作者と AI の協働で作成されたものです。作者が中核となる内容と元の表現を提供し、AI は口語的で断片的な内容を、より明確な文章表現へ整理し、構成の調整、表現の推敲、読みやすさの向上を担当しました。また、この日本語版は中国語版をもとに AI で翻訳しているため、表現に若干の差異がある場合があります。
 {: .prompt-tip }
 
+言語: [中文](/posts/cn-gemma4-local-experience/) | [English](/posts/en-gemma4-local-experience/) | 日本語（現在）
+
 Gemma 4 のリリース後、Ollama と LM Studio を使ってローカル環境にデプロイしてみました。特に E2B と E4B の 2 つの小規模モデルに注目しましたが、結論から言うと、VRAM 消費が極めて少なく、同クラスの小規模モデルの中で日本語能力が突出しており、ローカルでの翻訳体験も非常に良好です。
 
 ## VRAM 消費とデバイスを問わない動作

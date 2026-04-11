@@ -10,6 +10,8 @@ mermaid: true
 > 本文由作者提供核心内容，并与 AI 协作完成。AI 主要负责整理结构、润色表达和提升可读性。
 {: .prompt-tip }
 
+版本：中文（当前） | [English](/posts/en-free-dns-cheatsheet/) | [日本語](/posts/jp-free-dns-cheatsheet/)
+
 主流免费公开 DNS 服务一览
 
 | 提供方 | IPv4 | IPv6 | DoT | DoH |

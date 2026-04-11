@@ -11,6 +11,8 @@ mermaid: true
 > This article was created collaboratively by the author and AI. The author provided the core content, and AI helped organize, polish, and improve readability. This English version was also translated by AI from the Chinese version, so minor wording differences may exist.
 {: .prompt-tip }
 
+Versions: [中文](/posts/cn-windows-terminal-best-practice/) | English (Current) | [日本語](/posts/jp-windows-terminal-best-practice/)
+
 My personal Windows Terminal setup for a smooth workflow
 
 ## Prerequisites

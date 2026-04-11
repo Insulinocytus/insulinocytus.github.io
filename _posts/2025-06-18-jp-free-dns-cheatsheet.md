@@ -11,6 +11,8 @@ mermaid: true
 > この記事は作者と AI の協働で作成されたものです。作者が中核となる内容を提供し、AI は構成整理、表現の推敲、読みやすさの向上を担当しました。また、この日本語版は中国語版をもとに AI で翻訳しているため、表現に若干の差異がある場合があります。
 {: .prompt-tip }
 
+言語: [中文](/posts/cn-free-dns-cheatsheet/) | [English](/posts/en-free-dns-cheatsheet/) | 日本語（現在）
+
 主要な無料公開 DNS サービスの一覧。
 
 | 提供元 | IPv4 | IPv6 | DoT | DoH |

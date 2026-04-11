@@ -162,6 +162,24 @@ The English and Japanese versions must include both:
 - AI participation disclosure
 - AI translation disclosure
 
+### Cross-Language Links
+
+After the Chinese, English, and Japanese versions of the same article are all completed, perform a final cross-link check across the three files.
+
+The required rule is:
+
+- the English version must include a link to the Chinese version
+- the Japanese version must include a link to the Chinese version
+- the Chinese version must include links to both the English and Japanese versions
+
+Placement rule:
+
+- put these cross-language links immediately after the opening AI disclosure tip block near the beginning of the post
+
+Verification rule:
+
+- do not consider the three-language article set complete until the above links are present in the correct files and in the required position
+
 ### File Naming
 
 Use this filename format for posts:

@@ -9,6 +9,8 @@ media_subpath: /../assets/media/gemma4-local-experience
 > 本文由作者提供核心内容与原始表达，并与 AI 协作完成。AI 主要负责将偏口语化、碎片化的内容整理为更清晰的书面表达，并辅助润色结构与可读性。
 {: .prompt-tip }
 
+版本：中文（当前） | [English](/posts/en-gemma4-local-experience/) | [日本語](/posts/jp-gemma4-local-experience/)
+
 Gemma 4 发布后我用 Ollama 和 LM Studio 在本地部署试了一下，重点关注 E2B 和 E4B 两个小尺寸版本。结论：显存占用极低，日语能力在同类小模型中突出，做本地翻译体验很好。
 
 ## 显存占用与跨设备运行

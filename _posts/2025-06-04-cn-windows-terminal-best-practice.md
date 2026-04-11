@@ -11,6 +11,8 @@ mermaid: true
 > 本文由作者提供核心内容，并与 AI 协作完成。AI 主要负责整理结构、润色表达和提升可读性。
 {: .prompt-tip }
 
+版本：中文（当前） | [English](/posts/en-windows-terminal-best-practice/) | [日本語](/posts/jp-windows-terminal-best-practice/)
+
 我的 Windows Terminal 使用配置
 
 ## 前提

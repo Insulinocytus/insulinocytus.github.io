@@ -11,6 +11,8 @@ mermaid: true
 > この記事は作者と AI の協働で作成されたものです。作者が中核となる内容を提供し、AI は構成整理、表現の推敲、読みやすさの向上を担当しました。また、この日本語版は中国語版をもとに AI で翻訳しているため、表現に若干の差異がある場合があります。
 {: .prompt-tip }
 
+言語: [中文](/posts/cn-windows-terminal-best-practice/) | [English](/posts/en-windows-terminal-best-practice/) | 日本語（現在）
+
 私の Windows Terminal の実用設定
 
 ## 前提
