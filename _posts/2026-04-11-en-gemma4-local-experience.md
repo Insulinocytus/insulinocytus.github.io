@@ -1,58 +1,43 @@
 ---
-title: Running Gemma 4 Locally — Low VRAM, Great Japanese, Practical for Translation
+title: Local Deployment of Gemma 4 Small Models: VRAM Friendly, Excellent Japanese, Practical Translation
 date: 2026-04-11 15:00:00 +0900
 categories: [Tools]
-tags: [gemma, ollama, translation, local-deployment, english]
-media_subpath: /../assets/media/gemma4-local-experience
+tags: [gemma, ollama, translation, local-deployment, chinese]
+media_subpath: /assets/media/gemma4-local-experience
 ---
 
-> This article was created collaboratively by the author and AI. The author provided the core content and original rough expression, often in a spoken or fragmented form, and AI helped organize it into clearer written prose, polish the wording, and improve readability. This English version was also translated by AI from the Chinese version, so minor wording differences may exist.
+> This article was created collaboratively by the author and AI. The author provided the core content, and AI helped organize, polish, and improve readability. This English version was also translated by AI from the Chinese version, so minor wording differences may exist.
 {: .prompt-tip }
 
-Versions: [中文](/posts/cn-gemma4-local-experience/) | English (Current) | [日本語](/posts/jp-gemma4-local-experience/)
+After the release of Gemma 4, I tested it locally using Ollama and LM Studio, focusing on the smaller E2B and E4B versions. The core conclusion is: **extremely low VRAM usage, outstanding Japanese capability among similar small models, and a very good local translation experience.**
 
-After Gemma 4 launched, I deployed it locally with Ollama and LM Studio, focusing on the E2B and E4B variants. The verdict: extremely low VRAM usage, standout Japanese capability among small models, and a solid translation experience.
+## 🚀 Why Is It Best Suited for Japanese Users?
+The E2B and E4B models consume minimal VRAM; even the E2B can run on mobile phones, making it sufficient for basic tasks.
 
-## VRAM Usage and Cross-Device Running
+Most open-source small models currently available are led by Chinese teams. However, their Japanese processing capabilities generally fall short: MiniMax has no dedicated Japanese offering, while GLM and Kimi often occasionally mix in Chinese characters when translating Japanese content. Gemma 4 avoids this issue entirely. For the target user group (Japanese users), it represents the best current option.
 
-E2B and E4B have very low VRAM requirements. E2B can even run directly on a phone, and its quality is perfectly adequate for basic tasks.
+## 💻 Primary Use Cases for Small Models
+The applications of small models are relatively niche. Simple tasks can still be done manually, and complex problems remain beyond their scope. For me personally, the biggest use case right now is **translation**.
 
-Until now, open-source small models have been mostly released by Chinese teams, and their Japanese support is generally poor: MiniMax can't handle Japanese at all, and GLM and Kimi occasionally mix Chinese characters into Japanese output. Gemma 4 doesn't have this problem. For Japanese users, it should be the top choice among small models right now.
+## 🛠️ Practical Workflow Analysis
+### Translation Plugin Choice
+I switched from "Immersive Translate" to "Read Frog." Immersive Translate had too much commercial residue and bloat; Read Frog offers a much smoother open-source experience, although it occasionally encounters small bugs.
 
-## Use Cases for Small Models
+### Comparison of Translation Models
+Google previously released TranslateGemma (a dedicated translation model for 4B), but its drawback was inaccurate recognition between Simplified and Traditional Chinese when translating *to* Chinese, resulting in poor quality. Using Gemma 4 eliminates this issue almost entirely.
 
-Frankly, there aren't many. Tasks that are too simple you just do yourself, and tasks that are too hard are beyond what small models can handle. My primary use case is translation.
+However, such translation plugins have a fixed limitation: they can only translate by "snippets" and cannot understand full-page context, making contextual errors inevitable—this fact must be accepted.
 
-## Translation Workflow
+### Controlling Reasoning (System Prompt)
+Gemma 4 supports toggling the reasoning process using system prompts. When performing **translation tasks**, it is recommended to close the reasoning switch. This prevents extraneous thought steps from being outputted, ensuring maximum speed; conversely, opening it is ideal for casual conversation or deep analysis.
 
-### Translation Extension
+## 📊 Performance Data Reference
+I tested the dynamically quantized version by Unsloth:
+*   **RTX 4080:** E4B runs at approximately 110 tokens/s
+*   **M5 MacBook Pro:** E2B runs at 60+ tokens/s
 
-I used to use Immersive Translate, then switched to Read Frog. Immersive Translate is too commercialized, bloated, and closed-source; Read Frog is an open-source alternative that feels much better, despite some minor bugs.
+## ⚠️ Critical Deployment Considerations (Key Supplement)
+I found an issue: when using Unsloth's dynamic quantization version, executing a `tools call` within tool-calling flows like those in Claude Code often fails to execute properly. Therefore, to ensure optimal compatibility and stability, **it is strongly recommended that users prioritize deploying and testing with the official or officially recommended quantized versions provided by Ollama and LM Studio.**
 
-### Translation Model
-
-Google previously released TranslateGemma, a 4B translation-specific model, but it couldn't distinguish between Simplified and Traditional Chinese when translating to Chinese — mediocre quality overall. After switching to Gemma 4, this is basically no longer an issue.
-
-That said, these translation extensions have an inherent limitation: they translate segment by segment rather than the entire page at once, so errors from missing context are unavoidable. It's tolerable, though.
-
-### Reasoning Toggle
-
-Gemma 4 supports toggling reasoning (chain-of-thought) on and off via the system prompt. For translation, it's best to disable reasoning to avoid the extra thinking output slowing things down; for everyday chatting, you can enable it to get more detailed reasoning.
-
-## Performance
-
-I'm using the Unsloth dynamic quantization versions:
-
-- RTX 4080: E4B at roughly 110 tokens/s
-- M5 MacBook Pro: E2B at 60+ tokens/s
-
-## Conclusion
-
-Gemma 4 small models excel in VRAM efficiency, Japanese quality, and translation performance, and they rank highly on LMArena. If you're looking for a locally-runnable small model with strong Japanese and good translation capability, Gemma 4 is currently the top choice.
-
-## References
-
-- [Gemma 4 - Ollama](https://ollama.com/library/gemma4)
-- [TranslateGemma - Ollama](https://ollama.com/library/translategemma)
-- [Gemma 4 - Unsloth Docs](https://unsloth.ai/docs/models/gemma-4)
-- [Read Frog - GitHub](https://github.com/mengxi-ream/read-frog)
+## Final Takeaway
+Gemma 4 small models are outstanding in VRAM footprint, Japanese accuracy, and translation quality, which LMArena rankings confirm. If you seek a local deployable, reliable, and high-quality model for Japanese language tasks and translation, Gemma 4 is currently the premier choice.
